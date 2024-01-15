@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        imagen = binding.botonImagen
 
         //se llama a un launcher que pide que se seleccione una imagen
         binding.botonImagen.setOnClickListener {
