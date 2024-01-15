@@ -1,8 +1,10 @@
 package com.example.accesoarecursos
 
+import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.ImageButton
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -32,6 +34,11 @@ class MainActivity : AppCompatActivity() {
         //se llama a un launcher que pide que se seleccione una imagen
         binding.botonImagen.setOnClickListener {
             pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        }
+
+        //cuando se pulse el botón de acceder a la cámara, se llamará al launcher para lanzarlo
+        binding.bAccesoCamara.setOnClickListener {
+            pickFoto.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
         }
     }
 }
